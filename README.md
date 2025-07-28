@@ -41,25 +41,25 @@ Test Case:
  
  1) Test Case 01: Scan local empty repo
     Given: repo does not contain any secrets  When: Scan empty repo    Then: No Secret found
-    "trufflehog filesystem ../PycharmProjects/pythonProject"
+    "trufflehog filesystem PycharmProjects/pythonProject"
 
  2) Test Case 02: Scan local repo with secrets
     Given: Local repo contain secrets   When: Scan Repo with secrets  Then: Secrets are detected
-    "trufflehog filesystem ../PycharmProjects/trufflehog-tests"
+    "trufflehog filesystem PycharmProjects/trufflehog-tests"
 
  3) Test Case 03: Scan local repo with secrets and create json
     Given: Local repo contain secrets   When: Scan Repo with secrets and create json  
     Then: Secrets are detected and json file is created
-    "trufflehog filesystem ../PycharmProjects/trufflehog-tests --json  > output.json"
+    "trufflehog filesystem PycharmProjects/trufflehog-tests --json  > output.json"
 
  4) Test Case 04: Scan local repo with secret with flag: verified
     Given: Local repo contain secrets   When: Scan Repo with flag verified
     Then: Verified Secrets are detected 
-    "trufflehog filesystem ../PycharmProjects/trufflehog-tests  --results=verified,unknown  --json  > output.json"
+    "trufflehog filesystem PycharmProjects/trufflehog-tests  --results=verified,unknown  --json  > output.json"
 
  5) Test Case 05: Scan local file with secret with flag: verified
     Given: Local file contain secrets   When: Scan Repo with flag verified Then: Verified Secrets are detected
-    "trufflehog filesystem ../PycharmProjects/trufflehog-tests/config.env  --results=verified,unknown  --json  > output.json"
+    "trufflehog filesystem PycharmProjects/trufflehog-tests/config.env  --results=verified,unknown  --json  > output.json"
 
  6) Test Case 06: Scan online repo with secret  with flag: verified
     Given: online repo with secrets exist  When: Scan git repo online Then: Secrets in repo history are found if exist
@@ -67,11 +67,11 @@ Test Case:
 
  7) Test Case 07: Scan local non-existing repo with flag: verified
     When: run on non-existing folder          Then: Error is present - no such folder
-    "trufflehog filesystem ../PycharmProjects/trufflehog-tests_not_exiting --json  > output.json"
+    "trufflehog filesystem PycharmProjects/trufflehog-tests_not_exiting --json  > output.json"
 
  8) Test Case 08: Scan repo using docker
     Given: Online repo contain secrets and docker is running When: Scan Repo  Then: Verified Secrets are detected
-    "docker run --rm -it -v "%cd:/=\%:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/KarolodonerPL/trufflehog-tests.git  --json  > output.json"
+    "docker run --rm -it -v "C:\\Users\\karol\\.docker" trufflesecurity/trufflehog:latest github --repo https://github.com/KarolodonerPL/trufflehog-tests.git  --json  > output.json"
  
 
 Strategy to test bulk scans
