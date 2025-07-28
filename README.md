@@ -69,7 +69,6 @@ Test Case:
     When: run on non-existing folder          Then: Error is present - no such folder
     "trufflehog filesystem ../PycharmProjects/trufflehog-tests_not_exiting --json  > output.json"
 
-TODO
  8) Test Case 08: Scan repo using docker
     Given: Online repo contain secrets and docker is running When: Scan Repo  Then: Verified Secrets are detected
     "docker run --rm -it -v "%cd:/=\%:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/KarolodonerPL/trufflehog-tests.git  --json  > output.json"
