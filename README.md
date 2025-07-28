@@ -85,3 +85,7 @@ Strategy to test bulk scans
 8) Performance testing: check bulk scan on big repos and big repos number
 9) Compare scan to previous one
 
+Repo:
+https://github.com/KarolodonerPL/trufflehog-tests.git
+https://github.com/KarolodonerPL/HSBC.git
+
